@@ -21,6 +21,8 @@ alias gphm="git push heroku master"
 alias gpom="git push origin master"
 alias gs="git status"
 alias gm="git commit -m"
+alias gd="git diff"
+alias gds="gd --staged"
 source ~/.git-completion.bash
 
 # rails
