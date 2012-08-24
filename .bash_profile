@@ -14,30 +14,42 @@
 # export PS1="\[\033[00m\]\w\[\033[00m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[00m\]$\[\033[00m\] "
 
 # export PS1="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[00m\]\w\[\033[00m\] "
-export PS1="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '[\1]')\"\`\[\033[00m\]\[\033[00m\]\w: "
 
-alias r="rails"
-alias railsnewapp="ruby ~/code/_rails_templates/railsnewapp.rb"
-alias code="cd ~/code; ls"
-alias rebash="source ~/.bash_profile"
+# git
+export PS1="\`ruby -e \"print (%x{git branch 2> /dev/null}.split(%r{\n}).grep(/^\*/).first || '').gsub(/^\* (.+)$/, '[\1]')\"\`\[\033[00m\]\[\033[00m\]\w: "
 alias gphm="git push heroku master"
 alias gpom="git push origin master"
+alias gs="git status"
+alias gm="git commit -m"
+source ~/.git-completion.bash
+
+# rails
+alias railsnewapp="ruby ~/code/_rails_templates/railsnewapp.rb"
+alias r="rails"
 alias rr="rake routes"
+
+# cd'ing
+alias code="cd ~/code; ls"
 alias snapclass="cd ~/code/_sidejobs/snapclass"
 alias pairseed="cd ~/code/_my_projects/pairseed"
+alias myprojects="cd ~/code/_my_projects/; ls"
+alias learning="cd ~/code/_learning/; ls"
+alias sidejobs="cd ~/code/_sidejobs/; ls"
+alias dotfiles="cd ~/_dotfiles; ls -a"
+
+# rvm
 alias gemsets="rvm gemset list"
-alias gs="git status"
+
+# bash
+alias rebash="source ~/.bash_profile"
+shopt -s autocd globstar
 
 export PROMPT_COMMAND='echo -ne "\033]0;: ${PWD/#$HOME/~}\007"'
 # export PS1="\e"
 # export PS1="\e"
 
-source ~/.git-completion.bash
-alias myprojects="cd ~/code/_my_projects/; ls"
-alias learning="cd ~/code/_learning/; ls"
-alias sidejobs="cd ~/code/_sidejobs/; ls"
+# nmap for sharing WiFi
 alias nmap="grep ip_address /private/var/db/dhcpd_leases | cut -d= -f2 | nmap -iL - -sn"
-alias dotfiles="cd ~/_dotfiles; ls -a"
-shopt -s autocd globstar
 
+# heroku
 alias hero="heroku run --account personal"
