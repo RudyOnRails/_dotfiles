@@ -26,6 +26,7 @@ alias rr="rake routes"
 alias snapclass="cd ~/code/_sidejobs/snapclass"
 alias pairseed="cd ~/code/_my_projects/pairseed"
 alias gemsets="rvm gemset list"
+alias gs="git status"
 
 export PROMPT_COMMAND='echo -ne "\033]0;: ${PWD/#$HOME/~}\007"'
 # export PS1="\e"
@@ -37,3 +38,4 @@ alias learning="cd ~/code/_learning/; ls"
 alias sidejobs="cd ~/code/_sidejobs/; ls"
 alias nmap="grep ip_address /private/var/db/dhcpd_leases | cut -d= -f2 | nmap -iL - -sn"
 alias dotfiles="cd ~/_dotfiles; ls -a"
+shopt -s autocd globstar
