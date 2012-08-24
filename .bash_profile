@@ -39,3 +39,5 @@ alias sidejobs="cd ~/code/_sidejobs/; ls"
 alias nmap="grep ip_address /private/var/db/dhcpd_leases | cut -d= -f2 | nmap -iL - -sn"
 alias dotfiles="cd ~/_dotfiles; ls -a"
 shopt -s autocd globstar
+
+alias hero="heroku run --account personal"
