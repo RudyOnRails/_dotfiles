@@ -23,6 +23,10 @@ alias gs="git status"
 alias gcm="git commit -m"
 alias gd="git diff"
 alias gds="gd --staged"
+alias gcvm="git commit -v"
+alias gfom="git fetch origin master"
+alias gromi="git rebase -i origin/master"
+alias grom="git rebase origin/master"
 source ~/.git-completion.bash
 
 # rails
@@ -54,4 +58,6 @@ export PROMPT_COMMAND='echo -ne "\033]0;: ${PWD/#$HOME/~}\007"'
 alias nmap="grep ip_address /private/var/db/dhcpd_leases | cut -d= -f2 | nmap -iL - -sn"
 
 # heroku
-alias hero="heroku run --account personal"
+alias hero="heroku"
+
+alias bp="lime ~/.bash_profile"
